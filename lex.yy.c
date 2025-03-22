@@ -285,12 +285,22 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 8
-#define YY_END_OF_BUFFER 9
-static yyconst short int yy_accept[20] =
+#define YY_NUM_RULES 23
+#define YY_END_OF_BUFFER 24
+static yyconst short int yy_accept[106] =
     {   0,
-        0,    0,    0,    0,    9,    7,    4,    5,    2,    6,
-        3,    1,    8,    4,    5,    2,    3,    1,    0
+        0,    0,    0,    0,   24,   22,   19,   20,   17,   21,
+       18,    8,    8,    8,    8,    8,    8,   23,   16,   16,
+       16,   16,   16,   16,   19,   20,   17,   18,    8,    8,
+        8,    8,    8,    8,    8,   16,   16,   16,   16,   16,
+       16,   16,    8,    8,    8,    3,    8,    8,   16,   16,
+       16,   11,   16,   16,    8,    8,    8,    8,    8,   16,
+       16,   16,   16,   16,    8,    8,    8,    8,    1,   16,
+       16,   16,   16,    9,    8,    8,    8,    5,   16,   16,
+       16,   13,    8,    8,    2,   16,   16,   10,    7,    8,
+        8,   15,   16,   16,    8,    8,   16,   16,    4,    8,
+
+       12,   16,    6,   14,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -298,17 +308,17 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    4,    1,    1,    1,    1,    1,    1,    5,
-        5,    1,    1,    5,    1,    5,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    5,    5,    1,
-        1,    1,    6,    1,    7,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        1,    1,    1,    1,    1,    1,    7,    7,    7,    7,
+        1,    4,    5,    1,    1,    1,    1,    1,    1,    6,
+        6,    1,    1,    6,    1,    6,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    6,    6,    1,
+        1,    1,    7,    1,    8,    8,    8,    8,    8,    8,
+        8,    8,    8,    8,    8,    8,    8,    8,    8,    8,
+        8,    8,    8,    8,    8,    8,    8,    8,    8,    8,
+        1,    1,    1,    1,    1,    1,    9,   10,   11,   12,
 
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        7,    7,    1,    1,    1,    1,    1,    1,    1,    1,
+       13,    8,    8,    8,   14,    8,    8,   15,   16,   17,
+       18,   19,    8,   20,   21,   22,   23,   24,    8,   25,
+       26,    8,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -325,35 +335,87 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst int yy_meta[8] =
+static yyconst int yy_meta[27] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1
+        1,    1,    1,    1,    1,    1,    1,    2,    2,    2,
+        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
+        2,    2,    2,    2,    2,    2
     } ;
 
-static yyconst short int yy_base[21] =
+static yyconst short int yy_base[108] =
     {   0,
-        0,    0,    0,    0,   19,   20,   16,   14,   12,   20,
-        9,    7,   20,   11,    9,    7,    4,    2,   20,    7
+        0,    0,   26,    0,  139,  140,   51,  135,  132,  140,
+      129,    0,  110,  117,  120,   36,  119,  140,    0,  106,
+      113,  116,   38,  115,   56,  124,  121,  118,    0,  102,
+      112,  113,  117,  101,   99,    0,   96,  106,  107,  111,
+       95,   93,   92,   91,   95,  140,   96,   82,   87,   86,
+       90,  140,   91,   77,   89,   88,   85,   79,   94,   84,
+       83,   80,   74,   89,   76,   79,   64,   85,  140,   72,
+       75,   60,   81,  140,   71,   69,   78,  140,   68,   66,
+       75,  140,   53,   68,  140,   58,   67,  140,  140,   50,
+       60,  140,   48,   57,   67,   44,   65,   41,  140,   62,
+
+      140,   61,  140,  140,  140,   62,   61
     } ;
 
-static yyconst short int yy_def[21] =
+static yyconst short int yy_def[108] =
     {   0,
-       19,    1,   20,   20,   19,   19,   19,   19,   19,   19,
-       19,   19,   19,   19,   19,   19,   19,   19,    0,   19
+      105,    1,  105,    3,  105,  105,  105,  105,  105,  105,
+      105,  106,  106,  106,  106,  106,  106,  105,  107,  107,
+      107,  107,  107,  107,  105,  105,  105,  105,  106,  106,
+      106,  106,  106,  106,  106,  107,  107,  107,  107,  107,
+      107,  107,  106,  106,  106,  105,  106,  106,  107,  107,
+      107,  105,  107,  107,  106,  106,  106,  106,  106,  107,
+      107,  107,  107,  107,  106,  106,  106,  106,  105,  107,
+      107,  107,  107,  105,  106,  106,  106,  105,  107,  107,
+      107,  105,  106,  106,  105,  107,  107,  105,  105,  106,
+      106,  105,  107,  107,  106,  106,  107,  107,  105,  106,
+
+      105,  107,  105,  105,    0,  105,  105
     } ;
 
-static yyconst short int yy_nxt[28] =
+static yyconst short int yy_nxt[167] =
     {   0,
-        6,    7,    8,    9,   10,   11,   12,   13,   18,   17,
-       16,   15,   14,   18,   17,   16,   15,   14,   19,    5,
-       19,   19,   19,   19,   19,   19,   19
+        6,    7,    8,    7,    9,   10,   11,   12,   12,   12,
+       12,   12,   13,   14,   12,   12,   12,   12,   12,   15,
+       16,   12,   12,   17,   12,   12,   18,   18,   18,   18,
+       18,   18,   18,   19,   19,   19,   19,   19,   20,   21,
+       19,   19,   19,   19,   19,   22,   23,   19,   19,   24,
+       19,   19,   25,   33,   25,   40,   89,   25,   34,   25,
+       41,   92,   36,   29,  104,  103,  102,   90,  101,  100,
+       99,   98,   93,   97,   96,   95,   94,   91,   88,   87,
+       86,   85,   84,   83,   82,   81,   80,   79,   78,   77,
+       76,   75,   74,   73,   72,   71,   70,   69,   68,   67,
+
+       66,   65,   64,   63,   62,   61,   60,   59,   58,   57,
+       56,   55,   54,   53,   52,   51,   50,   49,   48,   47,
+       46,   45,   44,   43,   28,   27,   26,   42,   39,   38,
+       37,   35,   32,   31,   30,   28,   27,   26,  105,    5,
+      105,  105,  105,  105,  105,  105,  105,  105,  105,  105,
+      105,  105,  105,  105,  105,  105,  105,  105,  105,  105,
+      105,  105,  105,  105,  105,  105
     } ;
 
-static yyconst short int yy_chk[28] =
+static yyconst short int yy_chk[167] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,   20,   18,   17,
-       16,   15,   14,   12,   11,    9,    8,    7,    5,   19,
-       19,   19,   19,   19,   19,   19,   19
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    7,   16,    7,   23,   83,   25,   16,   25,
+       23,   86,  107,  106,  102,  100,   98,   83,   97,   96,
+       95,   94,   86,   93,   91,   90,   87,   84,   81,   80,
+       79,   77,   76,   75,   73,   72,   71,   70,   68,   67,
+       66,   65,   64,   63,   62,   61,   60,   59,   58,   57,
+
+       56,   55,   54,   53,   51,   50,   49,   48,   47,   45,
+       44,   43,   42,   41,   40,   39,   38,   37,   35,   34,
+       33,   32,   31,   30,   28,   27,   26,   24,   22,   21,
+       20,   17,   15,   14,   13,   11,    9,    8,    5,  105,
+      105,  105,  105,  105,  105,  105,  105,  105,  105,  105,
+      105,  105,  105,  105,  105,  105,  105,  105,  105,  105,
+      105,  105,  105,  105,  105,  105
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -384,6 +446,10 @@ char *yytext;
 #define SURPRISE_EMOJI 7
 #define THINK_EMOJI 8
 
+/* Buffer to accumulate multi-word expressions */
+char word_buffer[1024] = "";
+int intensity_modifier = 0;
+
 /* Helper function to check if a character is part of a word */
 int is_word_char(char c) {
     return isalnum(c) || c == '\'' || c == '-';
@@ -398,9 +464,76 @@ char* to_lowercase(char* s) {
     }
     return s;
 }
-#define IN_WORD 1
 
-#line 404 "lex.yy.c"
+/* Helper function to check for intensity modifiers */
+int get_intensity_value(const char* word) {
+    if (strcmp(word, "very") == 0 || 
+        strcmp(word, "really") == 0 ||
+        strcmp(word, "so") == 0) {
+        return 1;
+    } else if (strcmp(word, "extremely") == 0 || 
+               strcmp(word, "super") == 0 ||
+               strcmp(word, "incredibly") == 0 ||
+               strcmp(word, "extreme") == 0) {
+        return 2;
+    }
+    return 0;
+}
+
+/* Helper function to check for emoji words */
+int get_emoji_code(const char* word) {
+    if (strcmp(word, "smile") == 0 || 
+        strcmp(word, "happy") == 0 || 
+        strcmp(word, "joy") == 0) {
+        return HAPPY_EMOJI;
+    }
+    else if (strcmp(word, "grin") == 0 || 
+             strcmp(word, "laugh") == 0 || 
+             strcmp(word, "lol") == 0 || 
+             strcmp(word, "haha") == 0) {
+        return LAUGH_EMOJI;
+    }
+    else if (strcmp(word, "sad") == 0 || 
+             strcmp(word, "unhappy") == 0 || 
+             strcmp(word, "frown") == 0) {
+        return SAD_EMOJI;
+    }
+    else if (strcmp(word, "cry") == 0 || 
+             strcmp(word, "tears") == 0 || 
+             strcmp(word, "sob") == 0) {
+        return CRY_EMOJI;
+    }
+    else if (strcmp(word, "love") == 0 || 
+             strcmp(word, "heart") == 0 || 
+             strcmp(word, "adore") == 0) {
+        return LOVE_EMOJI;
+    }
+    else if (strcmp(word, "angry") == 0 || 
+             strcmp(word, "mad") == 0 || 
+             strcmp(word, "rage") == 0) {
+        return ANGRY_EMOJI;
+    }
+    else if (strcmp(word, "shocked") == 0 || 
+             strcmp(word, "surprise") == 0 || 
+             strcmp(word, "wow") == 0) {
+        return SURPRISE_EMOJI;
+    }
+    else if (strcmp(word, "think") == 0 || 
+             strcmp(word, "ponder") == 0 || 
+             strcmp(word, "wonder") == 0) {
+        return THINK_EMOJI;
+    }
+    return 0;
+}
+
+/* Reset the buffer for the next multi-word expression */
+void reset_buffer() {
+    word_buffer[0] = '\0';
+    intensity_modifier = 0;
+}
+#define IN_MULTIWORD 1
+
+#line 537 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -551,10 +684,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 35 "emoji.l"
+#line 106 "emoji.l"
 
-                    /* Start in the default state, looking for words */
-#line 558 "lex.yy.c"
+
+#line 691 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -605,13 +738,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 20 )
+				if ( yy_current_state >= 106 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 20 );
+		while ( yy_base[yy_current_state] != 140 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -639,74 +772,80 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 37 "emoji.l"
+#line 108 "emoji.l"
+{ 
+                      strcpy(word_buffer, "very");
+                      intensity_modifier = 1;
+                      BEGIN(IN_MULTIWORD);
+                    }
+	YY_BREAK
+case 2:
+YY_RULE_SETUP
+#line 114 "emoji.l"
+{ 
+                      strcpy(word_buffer, "really");
+                      intensity_modifier = 1;
+                      BEGIN(IN_MULTIWORD);
+                    }
+	YY_BREAK
+case 3:
+YY_RULE_SETUP
+#line 120 "emoji.l"
+{ 
+                      strcpy(word_buffer, "so");
+                      intensity_modifier = 1;
+                      BEGIN(IN_MULTIWORD);
+                    }
+	YY_BREAK
+case 4:
+YY_RULE_SETUP
+#line 126 "emoji.l"
+{ 
+                      strcpy(word_buffer, "extremely");
+                      intensity_modifier = 2;
+                      BEGIN(IN_MULTIWORD);
+                    }
+	YY_BREAK
+case 5:
+YY_RULE_SETUP
+#line 132 "emoji.l"
+{ 
+                      strcpy(word_buffer, "super");
+                      intensity_modifier = 2;
+                      BEGIN(IN_MULTIWORD);
+                    }
+	YY_BREAK
+case 6:
+YY_RULE_SETUP
+#line 138 "emoji.l"
+{ 
+                      strcpy(word_buffer, "incredibly");
+                      intensity_modifier = 2;
+                      BEGIN(IN_MULTIWORD);
+                    }
+	YY_BREAK
+case 7:
+YY_RULE_SETUP
+#line 144 "emoji.l"
+{ 
+                      strcpy(word_buffer, "extreme");
+                      intensity_modifier = 2;
+                      BEGIN(IN_MULTIWORD);
+                    }
+	YY_BREAK
+case 8:
+YY_RULE_SETUP
+#line 150 "emoji.l"
 { 
                       /* Keep original case for output if not an emoji word */
                       char* original = strdup(yytext);
                       char* lowercase = strdup(yytext);
                       to_lowercase(lowercase);
                       
-                      if (strcmp(lowercase, "smile") == 0 || 
-                          strcmp(lowercase, "happy") == 0 || 
-                          strcmp(lowercase, "joy") == 0) {
-                          yylval.emoji_code = HAPPY_EMOJI;
-                          free(original);
-                          free(lowercase);
-                          return EMOJI_WORD;
-                      }
-                      else if (strcmp(lowercase, "grin") == 0 || 
-                               strcmp(lowercase, "laugh") == 0 || 
-                               strcmp(lowercase, "lol") == 0 || 
-                               strcmp(lowercase, "haha") == 0) {
-                          yylval.emoji_code = LAUGH_EMOJI;
-                          free(original);
-                          free(lowercase);
-                          return EMOJI_WORD;
-                      }
-                      else if (strcmp(lowercase, "sad") == 0 || 
-                               strcmp(lowercase, "unhappy") == 0 || 
-                               strcmp(lowercase, "frown") == 0) {
-                          yylval.emoji_code = SAD_EMOJI;
-                          free(original);
-                          free(lowercase);
-                          return EMOJI_WORD;
-                      }
-                      else if (strcmp(lowercase, "cry") == 0 || 
-                               strcmp(lowercase, "tears") == 0 || 
-                               strcmp(lowercase, "sob") == 0) {
-                          yylval.emoji_code = CRY_EMOJI;
-                          free(original);
-                          free(lowercase);
-                          return EMOJI_WORD;
-                      }
-                      else if (strcmp(lowercase, "love") == 0 || 
-                               strcmp(lowercase, "heart") == 0 || 
-                               strcmp(lowercase, "adore") == 0) {
-                          yylval.emoji_code = LOVE_EMOJI;
-                          free(original);
-                          free(lowercase);
-                          return EMOJI_WORD;
-                      }
-                      else if (strcmp(lowercase, "angry") == 0 || 
-                               strcmp(lowercase, "mad") == 0 || 
-                               strcmp(lowercase, "rage") == 0) {
-                          yylval.emoji_code = ANGRY_EMOJI;
-                          free(original);
-                          free(lowercase);
-                          return EMOJI_WORD;
-                      }
-                      else if (strcmp(lowercase, "shocked") == 0 || 
-                               strcmp(lowercase, "surprise") == 0 || 
-                               strcmp(lowercase, "wow") == 0) {
-                          yylval.emoji_code = SURPRISE_EMOJI;
-                          free(original);
-                          free(lowercase);
-                          return EMOJI_WORD;
-                      }
-                      else if (strcmp(lowercase, "think") == 0 || 
-                               strcmp(lowercase, "ponder") == 0 || 
-                               strcmp(lowercase, "wonder") == 0) {
-                          yylval.emoji_code = THINK_EMOJI;
+                      int emoji_code = get_emoji_code(lowercase);
+                      if (emoji_code > 0) {
+                          yylval.emoji_info.code = emoji_code;    /* Updated for struct */
+                          yylval.emoji_info.intensity = 1;        /* Default intensity */
                           free(original);
                           free(lowercase);
                           return EMOJI_WORD;
@@ -719,44 +858,182 @@ YY_RULE_SETUP
                       }
                     }
 	YY_BREAK
-case 2:
+case 9:
 YY_RULE_SETUP
-#line 116 "emoji.l"
+#line 172 "emoji.l"
+{
+                      strcat(word_buffer, " very");
+                      intensity_modifier += 1;
+                    }
+	YY_BREAK
+case 10:
+YY_RULE_SETUP
+#line 177 "emoji.l"
+{
+                      strcat(word_buffer, " really");
+                      intensity_modifier += 1;
+                    }
+	YY_BREAK
+case 11:
+YY_RULE_SETUP
+#line 182 "emoji.l"
+{
+                      strcat(word_buffer, " so");
+                      intensity_modifier += 1;
+                    }
+	YY_BREAK
+case 12:
+YY_RULE_SETUP
+#line 187 "emoji.l"
+{
+                      strcat(word_buffer, " extremely");
+                      intensity_modifier += 2;
+                    }
+	YY_BREAK
+case 13:
+YY_RULE_SETUP
+#line 192 "emoji.l"
+{
+                      strcat(word_buffer, " super");
+                      intensity_modifier += 2;
+                    }
+	YY_BREAK
+case 14:
+YY_RULE_SETUP
+#line 197 "emoji.l"
+{
+                      strcat(word_buffer, " incredibly");
+                      intensity_modifier += 2;
+                    }
+	YY_BREAK
+case 15:
+YY_RULE_SETUP
+#line 202 "emoji.l"
+{
+                      strcat(word_buffer, " extreme");
+                      intensity_modifier += 2;
+                    }
+	YY_BREAK
+case 16:
+YY_RULE_SETUP
+#line 207 "emoji.l"
+{ 
+                      /* Check if this word is an emoji word */
+                      char* lowercase = strdup(yytext);
+                      to_lowercase(lowercase);
+                      
+                      int emoji_code = get_emoji_code(lowercase);
+                      if (emoji_code > 0) {
+                          /* We found a complete multi-word emoji expression */
+                          yylval.emoji_info.code = emoji_code;    /* Updated for struct */
+                          
+                          /* Calculate intensity based on modifiers */
+                          int final_intensity = 1 + (intensity_modifier > 3 ? 3 : intensity_modifier);
+                          yylval.emoji_info.intensity = final_intensity;  /* Updated for struct */
+                          
+                          free(lowercase);
+                          reset_buffer();
+                          BEGIN(INITIAL);
+                          return EMOJI_WORD;
+                      } else {
+                          /* Not an emoji word, output the whole buffer as regular text */
+                          char full_text[2048] = "";
+                          strcpy(full_text, word_buffer);
+                          strcat(full_text, " ");
+                          strcat(full_text, yytext);
+                          
+                          yylval.text = strdup(full_text);
+                          free(lowercase);
+                          reset_buffer();
+                          BEGIN(INITIAL);
+                          return REGULAR_WORD;
+                      }
+                    }
+	YY_BREAK
+case 17:
+YY_RULE_SETUP
+#line 240 "emoji.l"
 { yylval.intensity = strlen(yytext); return EXCLAMATION; }
 	YY_BREAK
-case 3:
+case 18:
 YY_RULE_SETUP
-#line 117 "emoji.l"
+#line 241 "emoji.l"
 { yylval.intensity = strlen(yytext); return QUESTION; }
 	YY_BREAK
-case 4:
+case 19:
 YY_RULE_SETUP
-#line 119 "emoji.l"
-{ yylval.text = strdup(yytext); return WHITESPACE; }
+#line 243 "emoji.l"
+{ 
+                      if (YYSTATE == IN_MULTIWORD) {
+                          /* Ignore extra spaces in multi-word mode */
+                      } else {
+                          yylval.text = strdup(yytext); 
+                          return WHITESPACE; 
+                      }
+                    }
 	YY_BREAK
-case 5:
+case 20:
 YY_RULE_SETUP
-#line 120 "emoji.l"
-{ yylval.text = strdup(yytext); return NEWLINE; }
+#line 252 "emoji.l"
+{ 
+                      /* Reset multi-word state at newlines */
+                      if (YYSTATE == IN_MULTIWORD) {
+                          /* Output accumulated buffer as regular text */
+                          if (word_buffer[0] != '\0') {
+                              yylval.text = strdup(word_buffer);
+                              reset_buffer();
+                              BEGIN(INITIAL);
+                              return REGULAR_WORD;
+                          }
+                      }
+                      yylval.text = strdup(yytext); 
+                      return NEWLINE; 
+                    }
 	YY_BREAK
-case 6:
+case 21:
 YY_RULE_SETUP
-#line 121 "emoji.l"
-{ yylval.text = strdup(yytext); return PUNCTUATION; }
+#line 267 "emoji.l"
+{ 
+                      /* Reset multi-word state at punctuation */
+                      if (YYSTATE == IN_MULTIWORD) {
+                          /* Output accumulated buffer as regular text */
+                          if (word_buffer[0] != '\0') {
+                              yylval.text = strdup(word_buffer);
+                              reset_buffer();
+                              BEGIN(INITIAL);
+                              return REGULAR_WORD;
+                          }
+                      }
+                      yylval.text = strdup(yytext); 
+                      return PUNCTUATION; 
+                    }
 	YY_BREAK
-case 7:
+case 22:
 YY_RULE_SETUP
-#line 122 "emoji.l"
-{ yylval.text = strdup(yytext); return OTHER_CHAR; }
+#line 282 "emoji.l"
+{ 
+                      /* Reset multi-word state for other characters */
+                      if (YYSTATE == IN_MULTIWORD) {
+                          /* Output accumulated buffer as regular text */
+                          if (word_buffer[0] != '\0') {
+                              yylval.text = strdup(word_buffer);
+                              reset_buffer();
+                              BEGIN(INITIAL);
+                              return REGULAR_WORD;
+                          }
+                      }
+                      yylval.text = strdup(yytext); 
+                      return OTHER_CHAR; 
+                    }
 	YY_BREAK
-case 8:
+case 23:
 YY_RULE_SETUP
-#line 124 "emoji.l"
+#line 297 "emoji.l"
 ECHO;
 	YY_BREAK
-#line 758 "lex.yy.c"
+#line 1035 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
-case YY_STATE_EOF(IN_WORD):
+case YY_STATE_EOF(IN_MULTIWORD):
 	yyterminate();
 
 	case YY_END_OF_BUFFER:
@@ -1047,7 +1324,7 @@ static yy_state_type yy_get_previous_state()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 20 )
+			if ( yy_current_state >= 106 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1082,11 +1359,11 @@ yy_state_type yy_current_state;
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 20 )
+		if ( yy_current_state >= 106 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 19);
+	yy_is_jam = (yy_current_state == 105);
 
 	return yy_is_jam ? 0 : yy_current_state;
 	}
@@ -1641,4 +1918,4 @@ int main()
 	return 0;
 	}
 #endif
-#line 124 "emoji.l"
+#line 297 "emoji.l"

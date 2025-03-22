@@ -175,11 +175,15 @@ typedef union YYSTYPE
     char *text;              /* For regular text and whitespace */
     int emoji_code;          /* Enum identifying which emoji to use */
     int intensity;           /* Intensity level (number of ! or ?) */
+    struct {
+        int code;
+        int intensity;
+    } emoji_info;            /* Combined emoji code and intensity */
 
 
 
 /* Line 214 of yacc.c  */
-#line 183 "emoji.tab.c"
+#line 187 "emoji.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -191,7 +195,7 @@ typedef union YYSTYPE
 
 
 /* Line 264 of yacc.c  */
-#line 195 "emoji.tab.c"
+#line 199 "emoji.tab.c"
 
 #ifdef short
 # undef short
@@ -476,8 +480,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    69,    69,    71,    75,    78,    81,    89,    93,    97,
-     101,   105
+       0,    73,    73,    75,    79,    83,    89,    98,   102,   106,
+     110,   114
 };
 #endif
 
@@ -1380,30 +1384,35 @@ yyreduce:
         case 4:
 
 /* Line 1455 of yacc.c  */
-#line 75 "emoji.y"
+#line 79 "emoji.y"
     {
-        printf("%s", get_emoji((yyvsp[(1) - (1)].emoji_code), 1)); /* Default intensity of 1 */
+        /* Use the intensity that comes directly from the lexer */
+        printf("%s", get_emoji((yyvsp[(1) - (1)].emoji_info).code, (yyvsp[(1) - (1)].emoji_info).intensity));
     ;}
     break;
 
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 78 "emoji.y"
+#line 83 "emoji.y"
     {
-        printf("%s", get_emoji((yyvsp[(1) - (2)].emoji_code), (yyvsp[(2) - (2)].intensity)));
+        /* Combine the intensity from modifiers and exclamation marks */
+        int combined_intensity = (yyvsp[(1) - (2)].emoji_info).intensity + (yyvsp[(2) - (2)].intensity);
+        if (combined_intensity > 3) combined_intensity = 3; /* Cap at 3 */
+        printf("%s", get_emoji((yyvsp[(1) - (2)].emoji_info).code, combined_intensity));
     ;}
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 81 "emoji.y"
+#line 89 "emoji.y"
     {
-        if ((yyvsp[(1) - (2)].emoji_code) == THINK_EMOJI) {
+        if ((yyvsp[(1) - (2)].emoji_info).code == THINK_EMOJI) {
             printf("%s", THINK_BASE_EMOJI);
         } else {
-            printf("%s", get_emoji((yyvsp[(1) - (2)].emoji_code), 1));
+            /* Use the intensity from modifiers */
+            printf("%s", get_emoji((yyvsp[(1) - (2)].emoji_info).code, (yyvsp[(1) - (2)].emoji_info).intensity));
             printf("❓");
         }
     ;}
@@ -1412,7 +1421,7 @@ yyreduce:
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 89 "emoji.y"
+#line 98 "emoji.y"
     {
         printf("%s", (yyvsp[(1) - (1)].text));
         free((yyvsp[(1) - (1)].text));
@@ -1422,7 +1431,7 @@ yyreduce:
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 93 "emoji.y"
+#line 102 "emoji.y"
     {
         printf("%s", (yyvsp[(1) - (1)].text));
         free((yyvsp[(1) - (1)].text));
@@ -1432,7 +1441,7 @@ yyreduce:
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 97 "emoji.y"
+#line 106 "emoji.y"
     {
         printf("%s", (yyvsp[(1) - (1)].text));
         free((yyvsp[(1) - (1)].text));
@@ -1442,7 +1451,7 @@ yyreduce:
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 101 "emoji.y"
+#line 110 "emoji.y"
     {
         printf("%s", (yyvsp[(1) - (1)].text));
         free((yyvsp[(1) - (1)].text));
@@ -1452,7 +1461,7 @@ yyreduce:
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 105 "emoji.y"
+#line 114 "emoji.y"
     {
         printf("%s", (yyvsp[(1) - (1)].text));
         free((yyvsp[(1) - (1)].text));
@@ -1462,7 +1471,7 @@ yyreduce:
 
 
 /* Line 1455 of yacc.c  */
-#line 1466 "emoji.tab.c"
+#line 1475 "emoji.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1674,7 +1683,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 111 "emoji.y"
+#line 120 "emoji.y"
 
 
 /* Function to get the appropriate emoji based on type and intensity */
@@ -1719,7 +1728,7 @@ const char* get_emoji(int emoji_code, int intensity) {
             return THINK_BASE_EMOJI;
         
         default:
-            return "❓"; /* Unknown emoji type */
+            return "😅"; /* Unknown emoji type */
     }
 }
 

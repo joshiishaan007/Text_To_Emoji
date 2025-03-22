@@ -57,10 +57,14 @@ const char* get_emoji(int emoji_code, int intensity);
     char *text;              /* For regular text and whitespace */
     int emoji_code;          /* Enum identifying which emoji to use */
     int intensity;           /* Intensity level (number of ! or ?) */
+    struct {
+        int code;
+        int intensity;
+    } emoji_info;            /* Combined emoji code and intensity */
 }
 
 /* Token declarations */
-%token <emoji_code> EMOJI_WORD
+%token <emoji_info> EMOJI_WORD  /* Changed to use the struct type */
 %token <text> REGULAR_WORD WHITESPACE NEWLINE PUNCTUATION OTHER_CHAR
 %token <intensity> EXCLAMATION QUESTION
 
@@ -73,16 +77,21 @@ document:
 
 text_element:
     EMOJI_WORD {
-        printf("%s", get_emoji($1, 1)); /* Default intensity of 1 */
+        /* Use the intensity that comes directly from the lexer */
+        printf("%s", get_emoji($1.code, $1.intensity));
     }
     | EMOJI_WORD EXCLAMATION {
-        printf("%s", get_emoji($1, $2));
+        /* Combine the intensity from modifiers and exclamation marks */
+        int combined_intensity = $1.intensity + $2;
+        if (combined_intensity > 3) combined_intensity = 3; /* Cap at 3 */
+        printf("%s", get_emoji($1.code, combined_intensity));
     }
     | EMOJI_WORD QUESTION {
-        if ($1 == THINK_EMOJI) {
+        if ($1.code == THINK_EMOJI) {
             printf("%s", THINK_BASE_EMOJI);
         } else {
-            printf("%s", get_emoji($1, 1));
+            /* Use the intensity from modifiers */
+            printf("%s", get_emoji($1.code, $1.intensity));
             printf("❓");
         }
     }

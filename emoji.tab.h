@@ -62,11 +62,15 @@ typedef union YYSTYPE
     char *text;              /* For regular text and whitespace */
     int emoji_code;          /* Enum identifying which emoji to use */
     int intensity;           /* Intensity level (number of ! or ?) */
+    struct {
+        int code;
+        int intensity;
+    } emoji_info;            /* Combined emoji code and intensity */
 
 
 
 /* Line 1676 of yacc.c  */
-#line 70 "emoji.tab.h"
+#line 74 "emoji.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
